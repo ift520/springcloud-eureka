@@ -1,0 +1,17 @@
+server:
+  port: 8100
+eureka:
+  instance:
+    #注册中心地址
+    hostname: 127.0.0.1
+  client:
+    #注册地址
+    service-url:
+      defaultZone: http://${eureka.instance.hostname}:${server.port}/eureka
+    #是否需要将自己注册到自己的注册中心默认为true，集群需要开启
+    register-with-eureka: false
+    #是否需要去检索服务信息
+    fetch-registry: false
+spring:
+  application:
+    name: springcloud-eureka
